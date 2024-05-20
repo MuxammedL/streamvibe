@@ -1,0 +1,53 @@
+@mixin Flexible(
+  $f-dir: null,
+  $f-wrap: null,
+  $j-cont: null,
+  $a-items: null,
+  $a-cont: null,
+  $gap: null,
+  $r-gap: null,
+  $c-gap: null
+) {
+  display: flex;
+  flex-direction: $f-dir;
+  flex-wrap: $f-wrap;
+  justify-content: $j-cont;
+  align-items: $a-items;
+  align-content: $a-cont;
+  gap: $gap;
+  row-gap: $r-gap;
+  column-gap: $c-gap;
+}
+
+@mixin Position(
+  $pos: null,
+  $top: null,
+  $left: null,
+  $bottom: null,
+  $right: null,
+  $z-index: null,
+  $inset: null
+) {
+  position: $pos;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+  z-index: $z-index;
+  inset: $inset;
+}
+
+@mixin Gridable(
+  $columns: null,
+  $rows: null,
+  $gap: null,
+  $r-gap: null,
+  $c-gap: null
+) {
+  display: grid;
+  grid-template-columns: $columns;
+  grid-template-rows: $rows;
+  gap: $gap;
+  row-gap: $r-gap;
+  column-gap: $c-gap;
+}

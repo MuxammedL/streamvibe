@@ -1,0 +1,62 @@
+@import "../../styles/partials/variables.scss";
+@import "../../styles/partials/mixin.scss";
+
+.slide {
+  @include Flexible($gap: 20px);
+  .movie {
+    width: 100%;
+    border: 1px solid $black-15;
+    cursor: pointer;
+    background-color: $black-10;
+    border-radius: 12px;
+    padding: 16px;
+    height: 404px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover {
+      background-color: $black-06;
+    }
+    @include Flexible($gap: 16px, $f-dir: column, $j-cont: space-between);
+    .image {
+      img {
+        border-radius: 10px;
+        width: 100%;
+        height: 324px;
+        object-fit: cover;
+      }
+    }
+    .movie-bottom {
+      @include Flexible($j-cont: space-between);
+      flex-shrink: 0;
+      .detail {
+        background-color: $black-08;
+        border: 1px solid $black-15;
+        padding: 6px;
+        border-radius: 50px;
+        color: $grey-60;
+        font-size: 12px;
+        @include Flexible($gap: 5px, $a-items: center);
+        .stars {
+          @include Flexible($a-items: center);
+        }
+      }
+    }
+  }
+  @media (min-width: 1920px) {
+    .movie {
+      padding: 20px;
+      height: 500px;
+      gap: 20px;
+      .image {
+        img {
+          height: 404px;
+        }
+      }
+      .movie-bottom {
+        .detail {
+          padding: 10px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

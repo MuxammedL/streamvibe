@@ -1,0 +1,92 @@
+@import "../../styles/partials/variables.scss";
+@import "../../styles/partials/mixin.scss";
+
+.our-genres {
+  color: $white;
+  .slide {
+    display: flex;
+    gap: 20px;
+  }
+  .genre {
+    width: 100%;
+    border: 1px solid $black-15;
+    cursor: pointer;
+    background-color: $black-10;
+    border-radius: 12px;
+    padding: 30px;
+    height: 317px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    justify-content: space-between;
+    &:hover {
+      background-color: $black-06;
+    }
+    .genre-title {
+      @include Flexible($j-cont: space-between, $a-items: center);
+      font-size: 16px;
+      font-weight: 500;
+      svg {
+        height: 24px;
+        width: 24px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .btn{
+        font-size: 12px;
+        padding: 8px;
+        border-radius: 4px;
+        line-height: normal;
+        height: 25px;
+        width: fit-content;
+      }
+    }
+    &:hover {
+      background-color: $black-08;
+      svg {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  .images {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    gap: 10px;
+    border-radius: 4px;
+    overflow: hidden;
+    img {
+      width: calc(50% - 5px);
+      height: 98px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to top,
+        #1a1a1a 2%,
+
+        rgba(14, 14, 14, 0) 100%
+      );
+    }
+  }
+  .icon {
+    height: 24px;
+  }
+  
+  @media (min-width: 1920px) {
+    .genre {
+      height: 378px;
+    }
+    .images {
+      img {
+        height: 121px;
+      }
+    }
+  }
+}

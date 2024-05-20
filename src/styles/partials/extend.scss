@@ -1,0 +1,55 @@
+%btn-dark {
+  border: 1px solid $black-15;
+  background-color: $black-06;
+  font-weight: 400;
+  @include Flexible($a-items: center, $gap: 0.5em);
+  border-radius: 8px;
+  padding: 11.2px;
+  font-size: 18px;
+  color: $white;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    color: $red-45;
+    border-color: $red-45;
+  }
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+  @media (min-width: 1920px) {
+    padding: 13.2px;
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+}
+
+%btn-primary {
+  background-color: $red-45;
+  font-weight: 400;
+  @include Flexible($j-cont: center,$a-items: center, $gap: 0.5em);
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 14px;
+  color: $white;
+  cursor: pointer;
+  max-width: 320px;
+  width: 100%;
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+  @media (min-width:768px) {
+    width: fit-content;
+  }
+  @media (min-width: 1920px) {
+    padding: 14px;
+    font-size: 18px;
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+}

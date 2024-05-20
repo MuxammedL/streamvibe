@@ -1,0 +1,21 @@
+@import "../../styles/partials/variables.scss";
+@import "../../styles/partials/mixin.scss";
+@import "../../styles/partials/extend.scss";
+
+.customPagination {
+  @include Flexible($a-items: center, $gap: 3px);
+}
+
+.bullet {
+  cursor: pointer;
+  width: 16px;
+  height: 4px;
+  border-radius: 4px;
+  background-color: $black-20;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bullet.active {
+  width: 23px;
+  background-color: $red-45;
+}

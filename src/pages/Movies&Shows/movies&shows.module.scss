@@ -1,0 +1,79 @@
+@import "../../styles/partials/variables.scss";
+@import "../../styles/partials/mixin.scss";
+@import "../../styles/partials/extend.scss";
+
+.entrance {
+  // padding-top: 138px;
+  .slider {
+    position: relative;
+    margin-bottom: 80px;
+  }
+  .show {
+    display: block;
+  }
+  .hidden {
+    display: none;
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
+  section {
+    &:not(:last-child) {
+      margin-bottom: 50px;
+      @media (min-width: 768px) {
+        margin-bottom: 80px;
+      }
+    }
+  }
+  .toogle_btn {
+    display: flex;
+    background-color: $black-06;
+    border: 1px solid $black-15;
+    border-radius: 8px;
+    padding: 0.5rem;
+    margin: 50px 0;
+    & > * {
+      flex: 1;
+      background: transparent;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      color: $grey-60;
+      padding: 12px 1.25rem;
+      font-size: 1em;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .active {
+      background-color: $black-12;
+      border-radius: 6px;
+      color: $white;
+    }
+  }
+  .movies {
+    margin-bottom: 100px;
+    .button {
+      position: absolute;
+      top: -1.5rem;
+      display: none;
+    }
+    @media (min-width: 768px) {
+      padding: 40px;
+      border: 1px solid $black-15;
+      border-radius: 12px;
+      position: relative;
+      .button {
+        display: block;
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    margin-bottom: 100px;
+    .toogle_btn {
+      display: none;
+    }
+  }
+  @media (min-width: 1920px) {
+    margin-bottom: 180px;
+  }
+}

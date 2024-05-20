@@ -1,0 +1,117 @@
+@import "../../styles/partials/variables.scss";
+@import "../../styles/partials/mixin.scss";
+@import "../../styles/partials/extend.scss";
+
+.movie {
+  position: relative;
+  border-radius: 12px;
+  height: 468px;
+  overflow: hidden;
+  @media (min-width: 768px) {
+    height: auto;
+  }
+  .bgImage {
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @media (min-width: 480px) {
+      display: none;
+    }
+  }
+  .desktop-bgImage {
+    display: none;
+    @media (min-width: 480px) {
+      display: block;
+    }
+    position: relative;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    video {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      inset: 0;
+      top: -10px;
+      z-index: 1;
+    }
+  }
+  .movie-content {
+    @include Position($pos: absolute, $inset: 0, $z-index: 9);
+    text-align: center;
+    padding: 0 12px 16px;
+    @include Flexible($f-dir: column, $j-cont: end, $gap: 1.125rem);
+    background: linear-gradient(
+      to top,
+      rgb(20, 20, 20) 2%,
+
+      rgba(14, 14, 14, 0) 100%
+    );
+    color: $white;
+    h1 {
+      font-size: 24px;
+    }
+    @media (min-width: 768px) {
+      padding: 0 10% 6.625rem;
+      h1 {
+        font-size: 30px;
+      }
+    }
+    @media (min-width: 1920px) {
+      h1 {
+        font-size: 38px;
+      }
+    }
+    .overview {
+      color: $grey-60;
+      display: none;
+      @media (min-width: 768px) {
+        display: block;
+      }
+    }
+    .movie-other {
+      @include Flexible(
+        $f-dir: column,
+        $j-cont: center,
+        $a-items: center,
+        $gap: 1.125rem
+      );
+      @media (min-width: 768px) {
+        @include Flexible(
+          $f-dir: row,
+          $j-cont: center,
+          $a-items: center,
+          $gap: 1.125rem
+        );
+      }
+      .buttons {
+        @include Flexible($j-cont: center, $a-items: center, $gap: 1.125rem);
+        .active {
+          border-color: $red-45;
+          color: $red-45;
+        }
+      }
+    }
+  }
+}
+
+.pagination {
+  @include Position(
+    $pos: absolute,
+    $bottom: 1.25rem,
+    $left: 0,
+    $right: 0,
+    $z-index: 5
+  );
+  display: none;
+  @media (min-width: 768px) {
+    @include Flexible($j-cont: space-between, $a-items: center);
+    padding: 0 3.125rem;
+  }
+}

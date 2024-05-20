@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap");
+@import "./partials/variables.scss";
+@import "./partials/mixin.scss";
+@import "./partials/extend.scss";
+
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+img,
+i,
+ol,
+ul,
+li,
+footer,
+header,
+nav,
+section,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+button,
+input {
+  appearance: none;
+  border: none;
+  background-color: transparent;
+}
+
+header,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 0 16px;
+  @media (min-width: 1920px) {
+    max-width: 1596px;
+  }
+  box-sizing: content-box;
+}
+
+.btn-dark {
+  @extend %btn-dark;
+}
+.btn-primary {
+  @extend %btn-primary;
+}
+
+.heading {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h2 {
+    color: $white;
+    font-size: 30px;
+  }
+  .controller-pagination {
+    padding: 12px;
+    gap: 16px;
+    align-items: center;
+    background-color: $black-06;
+    border: 1px solid $black-12;
+    border-radius: 8px;
+    display: none;
+    @media (min-width: 768px) {
+      display: flex;
+    }
+    .pBtn {
+      background-color: $black-10;
+    }
+  }
+}
+body,
+button {
+  font-family: "Manrope", sans-serif;
+}
